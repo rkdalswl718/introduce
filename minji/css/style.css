@@ -49,14 +49,13 @@
 }
 
 footer {
-    
     display: flex;
     justify-content: center;
-}
-footer>a {
-    margin: 10px;
+    margin: 20px;
     widht: 50px;
     high: 50px;
+}
+
 
 }
 footer>h6 {
