@@ -1,5 +1,4 @@
-body{
-    background-color: rgb(254, 236, 240);
+
 }
 
 .wrap{
@@ -21,6 +20,7 @@ body{
 #profile-images {
     width: 400px;
     margin-left: 65px;
+}
 
 
 .introduction>h1 {
@@ -54,5 +54,11 @@ footer {
     justify-content: center;
 }
 footer>a {
-    text-decoration-line: none;
+    margin: 10px;
+    widht: 50px;
+    high: 50px;
+
+}
+footer>h6 {
+    color: gray;
 }
