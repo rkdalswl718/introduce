@@ -1,10 +1,9 @@
-
-
-.header{
-    width: 50px;
+.menubar {
+    width: 100%;
 }
 
 .menu {
+    background-color: black;
     display: flex;
     margin : 0 auto;
     overflow: hidden;
@@ -12,13 +11,13 @@
 }
 
 .menu-item {
-    background-color: rgb(255, 226, 244);
+    background-color: rgb(0, 0, 0);
     flex: grow 6;
     transition: 0.5s;
 }
 
 .menu-item:hover { /*마우스포인터이벤트*/
-        background-color: rgb(255, 226, 244);
+        background-color: rgb(72, 72, 72);
 }
 
 .menu-link {
@@ -26,7 +25,7 @@
         padding: 16px;
         font-size: 18px;
         font-weight: bold;
-        color: #696868;
+        color: #ffffff;
         text-decoration: none;
         text-align: center;
 }
