@@ -75,20 +75,18 @@
 }
 
 #like {
-    font-family: 'Montserrat', sans-serif;
-    font-weight:40;
+    font-family: 'Gowun Batang', serif;
+    font-weight:40px;
     font-size:20px;
     font-style: italic;
-    padding-left: 20px;
+    padding-left: 0px;
     line-height: 28px
+
 }
 
 footer {
     display: flex;
     justify-content: center;
-    margin: 20px;
-    widht: 50px;
-    high: 50px;
 }
 
 
