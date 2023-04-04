@@ -4,10 +4,35 @@
     width: 50px;
 }
 
-#nav {
-    list-style-type:none;
-   
-  }
+.menu {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+    background-color: rgb(255, 226, 244);
+    flex-grow: 0;
+    transition: 0.3s;
+}
+
+.menu-item:hover { /*마우스포인터이벤트*/
+        background-color: rgb(255, 226, 244);
+        flex-grow: 1.2;
+}
+
+.menu-link {
+        display: block; 
+        padding: 16px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #696868;
+        text-decoration: none;
+        text-align: center;
+}
+
+    .menu-link:hover {
+        color: white;
+ }
+
 
 .wrap{
     background-color: white;
