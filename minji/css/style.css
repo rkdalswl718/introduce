@@ -3,11 +3,10 @@
 }
 
 .menu {
-    font-family: 'Gowun Batang', serif;
+    font-family: 'Tinos', serif;
     background-color: black;
     display: flex;
     justify-content: center;
-    margin : 0 auto;
     overflow: hidden;
     list-style:none;
 }
@@ -78,7 +77,7 @@
 }
 
 #like {
-    font-family: 'Gowun Batang', serif;
+    font-family: 'Tinos', serif;
     font-weight:40px;
     font-size:20px;
     font-style: italic;

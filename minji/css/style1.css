@@ -1,0 +1,9 @@
+address>h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* 높이는 문서 전체에 맞게 조절하세요 */
+}
+p {
+        
+    }
