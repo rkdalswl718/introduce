@@ -1,79 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>목록울 사용해 세로 메뉴 만들기</title>
-    <style>
-        a {
-            text-decoration: none;
+	<title>민지의 방명록</title>
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+    #guestbook {
+			width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid #b5ebc3;
+			border-radius: 5px;
+			background-color: #f1d2fc;
+		}
+        h1 {
+            font-family: 'Song Myung', serif;
+            font-size: 25pt;
         }
-        nav {
-            width: 300px;
-            margin: 50px 30px;
-        }
-        table {
-            caption-side: bottom;
-            border: 1px solid black; 
-            border-collapse: collapse;
-        
-        }
-        td, th {
-            border: 1px dotted black;
-            padding: 10px;
-            text-align: center;
-        }
-        .uu li{
+		.comment {
+            font-family: 'Gowun Batang', serif;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #fff;
+		}
+		.comment p {
+			margin: 0;
+		}
+		.comment .name {
+			font-weight: bold;
+		}
+		.comment .timestamp {
+			font-size: 0.8em;
+			color: #999;
+		}
+		.form-input {
             
-            list-style-type:none ;
-            border: 1px solid #222;
-            padding: 20px;
-            margin:5px;
-            
-        }
-
-
-    </style>
+			display: block;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1em;
+		}
+		.form-textarea {
+			display: block;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1em;
+			resize: vertical;
+			height: 100px;
+		}
+		.form-submit {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: #0095ff;
+			color: #fff;
+			font-size: 1em;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-    <h1>부산sw마이스터고</h1>
-    <nav class="uu">
-        <ul>
-        <li><a href="http://school.busanedu.net/bssm-h">학교 소개</a> </li>
-        <li><a href="https://www.facebook.com/BusanSoftwareMeisterHighschool/">학교 페이지</a></li>
-        <li><a href="https://www.instagram.com/bssm.hs/"> 학교 인스타그램</a></li>
-        <li><a href="https://bssm.meistergo.co.kr/" >마이스터인증제 </a></li>
-        <li><a href="http://school.busanedu.net/images/web/template/1072/main/1072_link1_3.png">도서교육종합시스템</a></li>
-        </ul>
-    </nav>
-<table>
-    <caption>상품구성</caption>
-    <thead>
-        <tr>
-            <th>용도</th>
-            <th>중량</th>
-            <th>갯수</th>
-            <th>가격</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2">선물용</td>
-            <td>3kg</td>
-            <td>11~16과</td>
-            <td>35,000원</td>
-        </tr>
-    </tbody>
-    <tr>
-        <td>5kg</td>
-        <td>18~16과</td>
-        <td>52,000원</td>
-
-    </tr>
-
-</tbody>
-</table>
-
-
-
+	<div id="guestbook">
+		<h1>방명록</h1>
+		<form id="comment-form" method="post">
+			<label for="name">이름:</label>
+			<input class="form-input" type="text" name="name" id="name" required>
+			<label for="comment">방명록:</label>
+			<textarea class="form-textarea" name="comment" id="comment" required></textarea>
+			<button class="form-submit" type="submit">등록</button>
+		</form>
+		<div id="comment-list"></div>
+	</div>
+	<script>
+		const commentForm = document.getElementById('comment-form');
+		const commentList = document.getElementById('comment-list');
+		commentForm.addEventListener('submit', function(e) {
+			e.preventDefault();
+			const name = e.target.elements.name.value;
+			const comment = e.target.elements.comment.value;
+			const timestamp = new Date().toLocaleString();
+			const newComment = document.createElement('div');
+			newComment.classList.add('comment');
+			newComment.innerHTML = `
+				<p><span class="name">${name}</span> <span class="timestamp">${timestamp}</span></p>
+				<p>${comment}</p>
+			`;
+			commentList.appendChild(newComment);
+			e.target.reset();
+		});
+	</script>
 </body>
 </html>
