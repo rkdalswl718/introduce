@@ -8,6 +8,10 @@
 			border-radius: 5px;
 			background-color: #ffffff;
 		}
+		.uu {
+			display: flex;
+		}
+		
         h1 {
             font-family: 'Song Myung', serif;
             font-size: 25pt;
