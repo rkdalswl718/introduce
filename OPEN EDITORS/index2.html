@@ -1,87 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>민지의 방명록</title>
-	<style>
-    @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
-    #guestbook {
-			width: 500px;
-			margin: 0 auto;
-			padding: 20px;
-			border: 1px solid #b5ebc3;
-			border-radius: 5px;
-			background-color: #f1d2fc;
-		}
-        h1 {
-            font-family: 'Song Myung', serif;
-            font-size: 25pt;
-        }
-		.comment {
-            font-family: 'Gowun Batang', serif;
-			margin-bottom: 20px;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			background-color: #fff;
-		}
-		.comment p {
-			margin: 0;
-		}
-		.comment .name {
-			font-weight: bold;
-		}
-		.comment .timestamp {
-			font-size: 0.8em;
-			color: #999;
-		}
-		.form-input {
-            
-			display: block;
-			margin-bottom: 10px;
-			padding: 5px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			width: 100%;
-			box-sizing: border-box;
-			font-size: 1em;
-		}
-		.form-textarea {
-			display: block;
-			margin-bottom: 10px;
-			padding: 5px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			width: 100%;
-			box-sizing: border-box;
-			font-size: 1em;
-			resize: vertical;
-			height: 100px;
-		}
-		.form-submit {
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			background-color: #0095ff;
-			color: #fff;
-			font-size: 1em;
-			cursor: pointer;
-		}
-	</style>
+	<link rel="stylesheet" href="../minji/css/style2.css">
 </head>
 <body>
-	<div id="guestbook">
+	<div id="guest">
 		<h1>방명록</h1>
 		<form id="comment-form" method="post">
-			<label for="name">이름:</label>
+			<label for="name">닉네임:</label>
 			<input class="form-input" type="text" name="name" id="name" required>
 			<label for="comment">방명록:</label>
 			<textarea class="form-textarea" name="comment" id="comment" required></textarea>
 			<button class="form-submit" type="submit">등록</button>
+
 		</form>
 		<div id="comment-list"></div>
 	</div>
 	<script>
+		/* const 바뀌지 않는 변수 , let 바뀌는 변수 */
 		const commentForm = document.getElementById('comment-form');
 		const commentList = document.getElementById('comment-list');
 		commentForm.addEventListener('submit', function(e) {
@@ -92,7 +30,7 @@
 			const newComment = document.createElement('div');
 			newComment.classList.add('comment');
 			newComment.innerHTML = `
-				<p><span class="name">${name}</span> <span class="timestamp">${timestamp}</span></p>
+				<p><span class="name">${name}</span><span class="timestamp">${timestamp}</span></p>
 				<p>${comment}</p>
 			`;
 			commentList.appendChild(newComment);

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+    #guest {
+			width: 500px;
+			margin: 0 auto;
+			padding: 30px;
+			border: 5px solid #000000;
+			border-radius: 5px;
+			background-color: #ffffff;
+		}
+        h1 {
+            font-family: 'Song Myung', serif;
+            font-size: 25pt;
+        }
+		.comment {
+            font-family: 'Gowun Batang', serif;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #fff;
+		}
+		.comment p {
+			margin: 0;
+		}
+		.comment .name {
+			font-weight: bold;
+		}
+		.comment .timestamp {
+			margin-left: 7px;
+			font-size: 0.8em;
+			color: #999;
+		}
+		.form-input {
+            
+			display: block;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1em;
+		}
+		.form-textarea {
+			display: block;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1em;
+			resize: vertical;
+			height: 100px;
+		}
+		.form-submit {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: #5c5c5c;
+			color: #fff;
+			font-size: 1em;
+			cursor: pointer;
+		}
