@@ -8,19 +8,21 @@
 			border-radius: 5px;
 			background-color: #ffffff;
 		}
-		.uu {
-			display: flex;
+		#uu {
+			font-size: 20px;
+			font-family: 'Gowun Batang', serif;
 		}
-		
+
         h1 {
             font-family: 'Song Myung', serif;
             font-size: 25pt;
+			margin-top: 5px;
+			margin-bottom: 26px;
         }
 		.comment {
             font-family: 'Gowun Batang', serif;
-			margin-bottom: 20px;
 			padding: 10px;
-			border: 1px solid #ccc;
+			border: 1px solid #767676;
 			border-radius: 5px;
 			background-color: #fff;
 		}
@@ -36,34 +38,42 @@
 			color: #999;
 		}
 		.form-input {
-            
+            font-family: 'Gowun Batang', serif;
 			display: block;
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 			padding: 5px;
-			border: 1px solid #ccc;
+			border: 1px solid #000000;
 			border-radius: 5px;
 			width: 100%;
 			box-sizing: border-box;
 			font-size: 1em;
 		}
 		.form-textarea {
+			font-family: 'Gowun Batang', serif;
 			display: block;
 			margin-bottom: 10px;
 			padding: 5px;
-			border: 1px solid #ccc;
+			border: 1px solid #000000;
 			border-radius: 5px;
 			width: 100%;
 			box-sizing: border-box;
 			font-size: 1em;
 			resize: vertical;
-			height: 100px;
+			height: 110px;
 		}
 		.form-submit {
+			font-family: 'Gowun Batang', serif;
 			padding: 10px 20px;
+			margin-top: 5px;
+			margin-bottom: 15px;
 			border: none;
 			border-radius: 5px;
-			background-color: #5c5c5c;
+			background-color: #000000;
 			color: #fff;
 			font-size: 1em;
 			cursor: pointer;
-		}
+}
+			.form-submit:hover {
+				background: rgb(67, 67, 67);
+	}
+		
