@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>단어 게임</title>
+  <script src="game.js"></script>
+</head>
+<body>
+  <h1>단어 게임</h1>
+  <button onclick="startGame()">게임 시작</button>
+</body>
+</html>
+
+
+<script>
+  // 사용할 단어 리스트
+var words = ["사과", "바나나", "오렌지", "포도", "수박", "파인애플"];
+
+// 게임 시작 함수
+function startGame() {
+  var randomIndex = Math.floor(Math.random() * words.length);
+  var word = words[randomIndex];
+  var scrambledWord = scrambleWord(word);
+
+  var userGuess = prompt("스크램블된 단어를 맞혀보세요: " + scrambledWord);
+
+  if (userGuess.toLowerCase() === word.toLowerCase()) {
+    alert("정답입니다!");
+  } else {
+    alert("틀렸습니다. 정답은 " + word + "입니다.");
+  }
+
+  // 게임 재시작 여부 확인
+  var playAgain = confirm("게임을 다시 시작하시겠습니까?");
+  if (playAgain) {
+    startGame();
+  }
+}
+
+// 단어 스크램블 함수
+function scrambleWord(word) {
+  var scrambledWord = "";
+  var wordArray = word.split('');
+
+  while (wordArray.length > 0) {
+    var randomIndex = Math.floor(Math.random() * wordArray.length);
+    scrambledWord += wordArray[randomIndex];
+    wordArray.splice(randomIndex, 1);
+  }
+
+  return scrambledWord;
+}
+
+// 게임 시작
+startGame();
+
+</script>

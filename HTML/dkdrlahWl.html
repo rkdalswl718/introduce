@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3 id="idh3">1. 키 이벤트 속성 문제 : 눌러진 key가 div영역에 나타나도록 하시오.</h3>
+    <div id="key"></div>
+    <hr>
+    <textarea cols="30" rows="3" autofocus></textarea>
+    <hr>
+    <button id="id1">클릭</button><br><br>
+    <button id="id2">클릭</button><br><br>
+    <button id="id3">클릭</button><br><br>
+    <script>
+        const keyDiv = document.getElementById("key");
+        const msgH3 = document.getElementById("idh3");
+        document.addEventListener('keydown',function(eventObj){
+            ketDiv.innerHTML = `<h1 id ='down'>keydown : ${evenObj.code}</h1>`
+        });
+
+        document.a0ddEventListener('keyup',function(eventObj){
+            keyDiv.innerHTML =`<h1 id ='up'>keyup :${eventObj.code}</h1>`;
+        });
+
+        const textArea = document.querySelector("textarea");
+        textArea.addEventListener('keyup',function(){
+            msgH3. innerHTML= `글자수:${textArea.value.length}`;
+            });
+        const btn1 = document.getElementById("id1");
+        const btn2 = document.getElementById("id2");
+        const btn3 = document.getElementById("id3");
+
+        btn1.addEventListener('click',function(){
+            btn1.tectContent ='객체변수의 속성으로 변경';
+        });
+        btn2.addEventListener('click',function(evenObj){
+            evenObj.currentTarget.tectContent ='이벤트객체의 currentTarget속성으로 사용';
+        });
+        btn3.addEventListener('click',function(){
+            this.textContent ='this의 속성으로 변경';
+        });
+
+
+
+    </script>
+</body>
+
+</html>

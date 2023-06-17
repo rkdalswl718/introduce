@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>민지의 방명록</title>
 	<link rel='icon' type='images/png' href='../minji/images/black-heart_1f5a4.png'>
 	<link rel="stylesheet" href="../minji/css/style2.css">
 </head>
+
 <body>
-	<div id="guest">	
-		
-	
-		
+	<div id="guest">
+
+
+
 		<h1><img src='https://emojigraph.org/media/apple/black-heart_1f5a4.png' width="30px"> 방명록
-			<img src='https://emojigraph.org/media/apple/black-heart_1f5a4.png' width="30px"></h1>
-		
-	
+			<img src='https://emojigraph.org/media/apple/black-heart_1f5a4.png' width="30px">
+		</h1>
+
+
 		<div id="uu">
-		<form id="comment-form" method="post">
-			<label for="name">닉네임:</label>
-			<input class="form-input" type="text" name="name" id="name" required>
-			<label for="comment">방명록:</label>
-			<textarea class="form-textarea" name="comment" id="comment" required></textarea>
-			<button class="form-submit" type="submit">등록</button>
+			<form id="comment-form" method="post">
+				<label for="name">닉네임:</label>
+				<input class="form-input" type="text" name="name" id="name" required>
+				<label for="comment">방명록:</label>
+				<textarea class="form-textarea" name="comment" id="comment" required></textarea>
+				<button class="form-submit" type="submit">등록</button>
 		</div>
 		</form>
 		<div id="comment-list"></div>
@@ -30,20 +33,24 @@
 		/* const 바뀌지 않는 변수 , let 바뀌는 변수 */
 		const commentForm = document.getElementById('comment-form');
 		const commentList = document.getElementById('comment-list');
-		commentForm.addEventListener('submit', function(e) {
+		commentForm.addEventListener('submit', function (e) {
 			e.preventDefault();
-			const name = e.target.elements.name.value;
-			const comment = e.target.elements.comment.value;
+
+			const { name, comment } = e.target.elements;
 			const timestamp = new Date().toLocaleString();
-			const newComment = document.createElement('div');
-			newComment.classList.add('comment');
-			newComment.innerHTML = `
-				<p><span class="name">${name}</span><span class="timestamp">${timestamp}</span></p>
-				<p>${comment}</p>
-			`;
-			commentList.appendChild(newComment);
+
+			const newComment = `
+    <div class="comment">
+		<p><span class="name">${name.value}</span><span class="timestamp">${timestamp}</span></p>
+		<p>${comment.value}</p>
+    </div>
+`;
+
+			commentList.insertAdjacentHTML('beforeend', newComment);
 			e.target.reset();
 		});
+
 	</script>
 </body>
+
 </html>
